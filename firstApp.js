@@ -63,3 +63,52 @@ console.log(name,subject)
 const array = ['apple', 'oranges' , 'mango', 'lemon']
 const [arr1,arr2] = array
 console.log(arr1,arr2)
+
+//async
+console.log('a');
+console.log('b');
+setTimeout(() => console.log('c'), 3000)
+setTimeout(() => console.log('d'), 0)
+console.log('e');// output: a b e d c
+
+//using only promises(callback)
+console.log('a');
+console.log('b');
+const timer1 = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('c')
+  },3000)
+})
+timer1.then((t1)=>{
+  console.log(t1)
+  const timer2 = new Promise((resolve ,reject)=>{
+    setTimeout(()=>{
+      resolve('d')
+    },0)
+  })
+  timer2.then((t2)=>{
+    console.log(t2)
+    console.log('e')
+  })
+})//output:a b c d e
+
+//using promises and async/await
+console.log('a');
+console.log('b');
+const timer = async()=>{
+  const timer1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve('c')
+    },3000)
+  })
+  const timer2 = new Promise((resolve ,reject)=>{
+    setTimeout(()=>{
+      resolve('d')
+    },0)
+  })
+  let [t1,t2] = await Promise.all([timer1,timer2])
+  console.log(t1)
+  console.log(t2)
+  return ('e')
+}
+timer().then((e)=>console.log(e))//output:a b c d e
