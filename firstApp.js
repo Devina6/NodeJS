@@ -21,5 +21,15 @@ const student = {
         console.log('Hi, I am '+ this.name+' in class '+this.class+' studying '+this.subject)
     }
 }
-
 student.details()
+
+//array.map
+const array = ['apple', 'oranges' , ' ', 'mango', ' ' , 'lemon']
+console.log(array)
+console.log(array.map(item => {
+    if (item===' '){
+        return 'empty string'
+    }else{
+        return item
+    }
+}))
