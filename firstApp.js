@@ -1,4 +1,9 @@
+//command promt to run js file
+//node firstApp.js
+
+//console.log
 console.log("Hello World");
 
-//command promt 
-//node firstApp.js
+//to create a file from js 
+const fs = require ('fs')
+fs.writeFileSync('hello.txt','Hello World');
