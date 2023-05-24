@@ -46,3 +46,20 @@ const toArray = (...args) =>{
     return args
 }
 console.log(toArray(1,2,3,4))
+
+//destructering object
+const student = {
+    name:'Devina',
+    class:'Back-end',
+    subject:'NodeJS',
+    details(){
+        console.log('Hi, I am '+ this.name+' in class '+this.class+' studying '+this.subject)
+    }
+}
+const {name,subject} = student;
+console.log(name,subject)
+
+//destructering array
+const array = ['apple', 'oranges' , 'mango', 'lemon']
+const [arr1,arr2] = array
+console.log(arr1,arr2)
