@@ -11,3 +11,15 @@ fs.writeFileSync('hello.txt','Hello World');
 // arrow function to multiply
 const multiply = (a,b)=> a*b;
 console.log(multiply(2,4));
+
+//create object
+const student = {
+    name:'Devina',
+    class:'Back-end',
+    subject:'NodeJS',
+    details(){
+        console.log('Hi, I am '+ this.name+' in class '+this.class+' studying '+this.subject)
+    }
+}
+
+student.details()
