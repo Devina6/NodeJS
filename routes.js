@@ -62,3 +62,11 @@ const requestHandler = (req,res)=>{
     }
 }
 module.exports = requestHandler;
+
+/*module.exports = {
+    handler:requestHandler,
+    text:'router connected '
+}*/
+
+//module.exports.handler = requestHandler;
+//module.exports.text = 'router connected';
